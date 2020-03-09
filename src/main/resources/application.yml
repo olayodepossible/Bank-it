@@ -1,0 +1,47 @@
+server:
+  port: 8085
+  servlet:
+    context-path: /api/v1
+logging:
+  level:
+    root: WARN
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/bank_it
+    username: postgres
+    password: possible_5344
+    testWhileIdle: true
+    validationQuery: SELECT 1
+    driver-class-name: org.postgresql.Driver
+  devtools:
+    livereload:
+      enabled: true
+    restart:
+      enabled: true
+
+  jpa:
+    open-in-view: false
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+
+      # Allows Hibernate to generate SQL optimized for a particular DBMS
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+  mail:
+    host: smtp.mailtrap.io
+    port: 2525
+    username: 32048abc68d2eb
+    password: b4043d7c6b5ad3
+
+    #other properties
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+          connectiontimeout: 5000
+          timeout: 5000
+          writetimeout: 5000
